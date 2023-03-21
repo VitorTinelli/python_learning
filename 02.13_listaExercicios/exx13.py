@@ -1,0 +1,12 @@
+print ("-_-_- Calculadora dos maiores números do Omega -_-_-")
+print()
+num = []
+num.append(float(input("Digite um número: ")))
+num.append(float(input("Digite um número: ")))
+num.append(float(input("Digite um número: ")))
+print()
+num.sort()
+num.reverse()
+print(num[0]+num[1])
+print()
+print()

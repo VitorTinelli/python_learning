@@ -1,0 +1,15 @@
+print ("-_-_- Calculadora de salários do Omega -_-_-")
+print ()
+int(input("Digite o número da conta: "))
+print()
+csaldat =float(input("Digite o seu saldo atual: "))
+cdeb = float(input("Digite o seu débito: "))
+ccred = float(input("Digite o seu crédito: "))
+csaldfin = csaldat - (ccred + cdeb)
+
+print("Seu saldo atual: R${:.2f}".format(csaldfin))
+if csaldfin >= 0:
+    print ("Saldo Positivo!")
+else : print("Saldo Negativo!")
+print()
+print()
