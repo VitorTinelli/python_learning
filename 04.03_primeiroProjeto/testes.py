@@ -6,5 +6,5 @@ cursor = banco.cursor()
 # cursor.execute("DELETE FROM user WHERE senha = 'user1' ")
 # banco.commit()
 
-# cursor.execute("SELECT cpf FROM user")
-# print(cursor.fetchall())
+cursor.execute("SELECT cpf FROM user WHERE senha = 'soyadmin'")
+print(cursor.fetchall())
