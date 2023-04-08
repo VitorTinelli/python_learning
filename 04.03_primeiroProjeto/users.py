@@ -71,11 +71,3 @@ class User():
                     else: 
                         print("Código Incorreto")
                         print("")
-                
-
-        
-
-
-
-
-
