@@ -102,14 +102,12 @@ while True:
 
                 codigoRast = input("Digite o código de rastreio da mercadoria: ")
                 cursor.execute("SELECT statusI FROM encomendas WHERE codRastreio = '{}'".format(codigoRast))
-
                 match cursor.fetchall():
                     case [(0,)]:
                         cursor.execute("UPDATE encomendas SET statusI = {}, statusT = '{}' where codRastreio = '{}'".format(1, "ENCOMENDA EM ROTA DE ENTREGA", codigoRast))
                         banco.commit()
                         print("ENCOMENDA ATUALIZADA: \nNovo status: ENCOMENDA EM ROTA DE ENTREGA")
-                    
-
+                
                     case [(1,)]:
                         cursor.execute("UPDATE encomendas SET statusI = {}, statusT = '{}' where codRastreio = '{}'".format(2, "ENCOMENDA ENTREGUE", codigoRast))
                         banco.commit()

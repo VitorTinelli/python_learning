@@ -6,7 +6,7 @@ cursor = banco.cursor()
 
 class Encomendas():
     def __init__(self):
-        frete = 0
+        pass
     def envio(self):
         pass
 
@@ -35,7 +35,7 @@ class Cartas(Encomendas):
             codigoRast = "NL" + str(randint(1000, 9999)) + "BR"
         cursor.execute("INSERT INTO encomendas VALUES('{}', '{}', '{}', '{}','{:.2f}','{}', '{}', {} )".format(nome, dest, end, codigoRast, frete, "CARTA" ,"RECEBIDO NA AGÊNCIA DOS CORREIOS", 0))
         banco.commit()
-        print("Encomenda enviada com sucesso!\nDestinatário: {}\nEndereço: {}\nCusto de Envio: {}\nCódigo de Rastreio: {}".format(dest, end, frete, codigoRast))
+        print("Encomenda enviada com sucesso!\nDestinatário: {}\nEndereço: {:.2f}\nCusto de Envio: {}\nCódigo de Rastreio: {}".format(dest, end, frete, codigoRast))
         print("")
 
 class Caixas(Encomendas):
@@ -55,5 +55,5 @@ class Caixas(Encomendas):
             codigoRast = "NL" + str(randint(1000, 9999)) + "BR"
         cursor.execute("INSERT INTO encomendas VALUES('{}', '{}', '{}', '{}','{:.2f}','{}', '{}', {} )".format(nome, dest, end, codigoRast, frete, "CAIXA" ,"RECEBIDO NA AGÊNCIA DOS CORREIOS", 0))
         banco.commit()
-        print("Encomenda enviada com sucesso!\nDestinatário: {}\nEndereço: {}\nCusto de Envio: {}\nCódigo de Rastreio: {}".format(dest, end, frete, codigoRast))
+        print("Encomenda enviada com sucesso!\nDestinatário: {}\nEndereço: {:.2f}\nCusto de Envio: {}\nCódigo de Rastreio: {}".format(dest, end, frete, codigoRast))
         print("")
