@@ -8,8 +8,7 @@ cursor = banco.cursor()
 
 controladorEtapas = 0
 user = User()
-cartas = Cartas()
-caixas = Caixas()
+
 
 while True:
     match controladorEtapas:
@@ -42,10 +41,15 @@ while True:
             #CONTA SEM DIREITOS DE ADMINISTRADOR
             envioAcompanhamento = int(input("Digite 1 para enviar encomenda, e 2 para acompanhar uma encomenda: "))
             if envioAcompanhamento == 1:
-                tipoEnvio = int(input("Digite 1 para cartas, e 2 para caixas: ")) 
+                tipoEnvio = int(input("Digite 1 para cartas, e 2 para caixas: "))
+                nome = input("Digite seu nome: ")
+                dest = input("Digite o nome do destinatário: ")
+                end = input("Digite o endereço da entrega: ")
                 if tipoEnvio == 1:
+                    cartas = Cartas(nome, dest, end)
                     cartas.envio()
                 elif tipoEnvio == 2:
+                    caixas = Caixas(nome, dest, end)
                     caixas.envio()
                 else: 
                     print("Código Incorreto!")
@@ -74,9 +78,14 @@ while True:
 
             if envioAcompanhamento == 1: ##
                 tipoEnvio = int(input("Digite 1 para cartas, e 2 para caixas: ")) 
+                nome = input("Digite seu nome: ")
+                dest = input("Digite o nome do destinatário: ")
+                end = input("Digite o endereço da entrega: ")
                 if tipoEnvio == 1:
+                    cartas = Cartas(nome, dest, end)
                     cartas.envio()
                 elif tipoEnvio == 2:
+                    caixas = Caixas(nome, dest, end)
                     caixas.envio()
                 else: 
                     print("Código Incorreto!")

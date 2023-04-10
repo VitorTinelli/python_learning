@@ -61,8 +61,8 @@ class User():
             else: 
                 print("CPF JÁ REGISTRADO NO SISTEMA!")
                 print("")
-                tenteNovamente = 10
-                while (tenteNovamente != 1 or tenteNovamente != 0):
+                tenteNovamente = 0
+                while (tenteNovamente != 1 and tenteNovamente != 2):
                     tenteNovamente = int(input("Códigos: \n1 - SIM \n2 - NÃO\nDeseja tentar novamente: "))
                     if tenteNovamente == 1:
                         break
