@@ -39,7 +39,7 @@ while True:
 
         case 2:
             #CONTA SEM DIREITOS DE ADMINISTRADOR
-            envioAcompanhamento = int(input("Digite 1 para enviar encomenda, e 2 para acompanhar uma encomenda: "))
+            envioAcompanhamento = int(input("Digite 1 para enviar encomenda, e 2 para acompanhar uma encomenda (0 deslogar): "))
             if envioAcompanhamento == 1:
                 tipoEnvio = int(input("Digite 1 para cartas, e 2 para caixas: "))
                 nome = input("Digite seu nome: ")
@@ -51,6 +51,7 @@ while True:
                 elif tipoEnvio == 2:
                     caixas = Caixas(nome, dest, end)
                     caixas.envio()
+
                 else: 
                     print("Código Incorreto!")
 
@@ -68,15 +69,16 @@ while True:
                     cursor.execute("SELECT statusT from encomendas where codRastreio = '{}'".format(codigoRast))
                     print("Status: " + str(cursor.fetchone()))
                     print("")
-
+            elif envioAcompanhamento == 0:
+                controladorEtapas = 0
             else:
                 print("Código incorreto.")
                 print("")
                 
         case 3:
-            envioAcompanhamento = int(input("Digite 1 para enviar encomenda, 2 para acompanhar uma encomenda, e 3 para alterar o status de uma encomenda: "))
+            envioAcompanhamento = int(input("Digite 1 para enviar encomenda, 2 para acompanhar uma encomenda, e 3 para alterar o status de uma encomenda (0 deslogar): "))
 
-            if envioAcompanhamento == 1: ##
+            if envioAcompanhamento == 1:
                 tipoEnvio = int(input("Digite 1 para cartas, e 2 para caixas: ")) 
                 nome = input("Digite seu nome: ")
                 dest = input("Digite o nome do destinatário: ")
@@ -124,7 +126,10 @@ while True:
                     
                     case [(2,)]:
                         print("MERCADORIA JÁ EM POSSE DO DESTINATÁRIO")
-                    
+
+            elif envioAcompanhamento == 0:
+                controladorEtapas = 0
+
             else:
                 print("Código incorreto.")
                 print("")
